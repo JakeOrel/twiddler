@@ -15,17 +15,26 @@
         var $loadTweetsButton = $('<button></button>');
         $loadTweetsButton.text('Load New Tweets');
         $loadTweetsButton.appendTo($body);
+        $loadTweetsButton.click(function() {
+          loadTweets();
+        });
 
+        var $tweets = $('<div class="tweets"></div>');
+        $tweets.appendTo($body);
 
-        var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($body);
-          index -= 1;
+        function loadTweets() {
+          $tweets.html('');
+
+          var index = streams.home.length - 1;
+          while(index >= 0){
+            var tweet = streams.home[index];
+            var $tweet = $('<div></div>');
+            $tweet.text('@' + tweet.user + ': ' + tweet.message);
+            $tweet.appendTo($tweets);
+            index -= 1;
+          }
         }
-
+        loadTweets();
       });
 
     </script>
