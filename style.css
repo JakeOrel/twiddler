@@ -7,9 +7,13 @@ button {
 }
 
 
-.tweets div {
+.tweets > div {
   border: 1px solid;
   width: 500px;
   margin: 10px auto;
   padding: 10px 5px;
+}
+
+.timestamp {
+  font-size: 14px;
 }
