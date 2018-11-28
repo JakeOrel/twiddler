@@ -1,17 +1,39 @@
+body {
+  background-color: lightblue;
+}
+
 button {
   display: block;
   margin: 0 auto;
   font-size: 16px;
   border: 1px solid black;
   border-radius: 5px;
+  transition: 0.5s;
+}
+
+button:hover {
+  background-color: #d3f0f9;
+  cursor: pointer;
 }
 
 
 .tweets > div {
   border: 1px solid;
+  border-radius: 5px;
   width: 500px;
   margin: 10px auto;
   padding: 10px 5px;
+  background-color: #d3f0f9;
+}
+
+.tweets > div a {
+  transition: 0.5s;
+}
+
+.tweets > div a:hover {
+  background-color: lightblue;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .timestamp {

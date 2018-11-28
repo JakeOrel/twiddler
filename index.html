@@ -35,7 +35,7 @@
 
         function renderTweet(tweet) {
           var $tweet = $('<div></div>');
-          $tweet.append('@' + tweet.user + ': ' + tweet.message);
+          $tweet.append('@' + '<a>' + tweet.user + '</a>' + ': ' + tweet.message);
           $tweet.append('<br>');
           var $timestamp = $('<div class="timestamp"></div>')
           $timestamp.append('<i>' + tweet.created_at + '</i>');
