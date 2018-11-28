@@ -3,6 +3,7 @@
   <head>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
     <script>
@@ -10,6 +11,11 @@
       $(document).ready(function(){
         var $body = $('body');
         $body.html('');
+
+        var $loadTweetsButton = $('<button></button>');
+        $loadTweetsButton.text('Load New Tweets');
+        $loadTweetsButton.appendTo($body);
+
 
         var index = streams.home.length - 1;
         while(index >= 0){
