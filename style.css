@@ -1,0 +1,15 @@
+button {
+  display: block;
+  margin: 0 auto;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+
+.tweets div {
+  border: 1px solid;
+  width: 500px;
+  margin: 10px auto;
+  padding: 10px 5px;
+}
