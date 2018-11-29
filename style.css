@@ -2,6 +2,16 @@ body {
   background-color: lightblue;
 }
 
+header {
+  padding: 10px 0;
+}
+
+h1 {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 button {
   display: block;
   margin: 0 auto;
@@ -20,7 +30,7 @@ button:hover {
 .tweets > div {
   border: 1px solid;
   border-radius: 5px;
-  width: 500px;
+  max-width: 500px;
   margin: 10px auto;
   padding: 10px 5px;
   background-color: #d3f0f9;
