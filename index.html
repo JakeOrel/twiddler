@@ -20,6 +20,9 @@
         var $main = $('<main></main>');
         $main.appendTo($body);
 
+        var $pageName = $('<h2></h2>');
+        $pageName.appendTo($main);
+
         var $loadTweetsButton = $('<button></button>');
         $loadTweetsButton.appendTo($main);
         $loadTweetsButton.click(function() {
@@ -55,13 +58,15 @@
         }
 
         function displayUserTimeline(user) {
-          loadTweets(streams.users[user]);
+          $pageName.text(user + '\'s Timeline');
           $loadTweetsButton.text('Return to Home');
+          loadTweets(streams.users[user]);
         }
 
         function displayHomepage() {
-          loadTweets(streams.home);
+          $pageName.text('Homepage');
           $loadTweetsButton.text('Load New Tweets');
+          loadTweets(streams.home);
         }
 
         displayHomepage();
