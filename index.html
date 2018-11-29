@@ -13,14 +13,21 @@
         var $body = $('body');
         $body.html('');
 
+        var $header = $('<header></header>');
+        $header.html('<h1>Twiddler</h1>');
+        $header.appendTo($body);
+
+        var $main = $('<main></main>');
+        $main.appendTo($body);
+
         var $loadTweetsButton = $('<button></button>');
-        $loadTweetsButton.appendTo($body);
+        $loadTweetsButton.appendTo($main);
         $loadTweetsButton.click(function() {
           displayHomepage();
         });
 
         var $tweets = $('<div class="tweets"></div>');
-        $tweets.appendTo($body);
+        $tweets.appendTo($main);
 
         function renderTweet(tweet) {
           var $tweet = $('<div></div>');
