@@ -14,7 +14,6 @@
         $body.html('');
 
         var $loadTweetsButton = $('<button></button>');
-        $loadTweetsButton.text('Load New Tweets');
         $loadTweetsButton.appendTo($body);
         $loadTweetsButton.click(function() {
           displayHomepage();
@@ -22,6 +21,16 @@
 
         var $tweets = $('<div class="tweets"></div>');
         $tweets.appendTo($body);
+
+        function renderTweet(tweet) {
+          var $tweet = $('<div></div>');
+          $tweet.append('@' + '<a class="user">' + tweet.user + '</a>' + ': ' + tweet.message);
+          $tweet.append('<br>');
+          var $timestamp = $('<div class="timestamp"></div>')
+          $timestamp.append('<i>' + tweet.created_at + '</i>');
+          $timestamp.appendTo($tweet);
+          $tweet.appendTo($tweets);
+        }
 
         function loadTweets(tweets) {
           $tweets.html('');
@@ -38,22 +47,14 @@
           });
         }
 
-        function renderTweet(tweet) {
-          var $tweet = $('<div></div>');
-          $tweet.append('@' + '<a class="user">' + tweet.user + '</a>' + ': ' + tweet.message);
-          $tweet.append('<br>');
-          var $timestamp = $('<div class="timestamp"></div>')
-          $timestamp.append('<i>' + tweet.created_at + '</i>');
-          $timestamp.appendTo($tweet);
-          $tweet.appendTo($tweets);
-        }
-
         function displayUserTimeline(user) {
           loadTweets(streams.users[user]);
+          $loadTweetsButton.text('Return to Home');
         }
 
         function displayHomepage() {
           loadTweets(streams.home);
+          $loadTweetsButton.text('Load New Tweets');
         }
 
         displayHomepage();
