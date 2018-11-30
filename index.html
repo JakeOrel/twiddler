@@ -3,6 +3,7 @@
   <head>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <script src="moment.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Neuton:800|Open+Sans" rel="stylesheet">
   </head>
@@ -10,7 +11,7 @@
     <script>
 
       $(document).ready(function(){
-
+        console.log(moment().startOf('day').fromNow());
         var $body = $('body');
         $body.html('');
 
@@ -40,8 +41,9 @@
           var $tweet = $('<div></div>');
           $tweet.append('@' + '<a class="user">' + tweet.user + '</a>' + ': ' + tweet.message);
           $tweet.append('<br>');
-          var $timestamp = $('<div class="timestamp"></div>')
-          $timestamp.append('<i>' + tweet.created_at + '</i>');
+          var $timestamp = $('<i class="timestamp"></i>');
+          $timestamp.append(moment(tweet.created_at).fromNow());
+          $timestamp.attr('title', moment(tweet.created_at).format('MMM DD, YYYY, h:mm:ss a'));
           $timestamp.appendTo($tweet);
           $tweet.appendTo($tweets);
         }
