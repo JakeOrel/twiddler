@@ -17,6 +17,9 @@
         var $header = $('<header></header>');
         $header.html('<h1>Twiddler</h1>');
         $header.appendTo($body);
+        $header.click(function() {
+          displayHomepage();
+        });
 
         var $main = $('<main></main>');
         $main.appendTo($body);
@@ -26,6 +29,9 @@
 
         var $loadTweetsButton = $('<button></button>');
         $loadTweetsButton.appendTo($main);
+        $loadTweetsButton.click(function() {
+          displayHomepage();
+        });
 
         var $tweets = $('<div class="tweets"></div>');
         $tweets.appendTo($main);
@@ -49,6 +55,10 @@
             renderTweet(tweet);
             index -= 1;
           }
+
+          $('.user').on('click', function(event) {
+            displayUserTimeline(event.target.text);
+          });
         }
 
         function displayUserTimeline(user) {
@@ -63,22 +73,7 @@
           loadTweets(streams.home);
         }
 
-        function setupEventHandlers() {
-          $header.click(function() {
-            displayHomepage();
-          });
-
-          $loadTweetsButton.click(function() {
-            displayHomepage();
-          });
-
-          $('.user').click(function(event) {
-            displayUserTimeline(event.target.text);
-          });
-        }
-        
         displayHomepage();
-        setupEventHandlers();
       });
 
     </script>
