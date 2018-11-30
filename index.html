@@ -4,6 +4,7 @@
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Neuton:800|Open+Sans" rel="stylesheet">
   </head>
   <body>
     <script>
@@ -16,6 +17,9 @@
         var $header = $('<header></header>');
         $header.html('<h1>Twiddler</h1>');
         $header.appendTo($body);
+        $header.click(function() {
+          displayHomepage();
+        });
 
         var $main = $('<main></main>');
         $main.appendTo($body);

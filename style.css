@@ -1,15 +1,24 @@
 body {
   background-color: lightblue;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
 }
 
 header {
   padding: 10px 0;
+  background-color: #d2e9f1;
+  font-size: 21px;
 }
 
 h1 {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px;
+  font-family: 'Neuton', serif;
+}
+
+h1:hover {
+  cursor: pointer;
 }
 
 h2 {
@@ -30,6 +39,9 @@ button:hover {
   cursor: pointer;
 }
 
+.tweets {
+  padding: 10px;
+}
 
 .tweets > div {
   border: 1px solid;
