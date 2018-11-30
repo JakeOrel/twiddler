@@ -15,6 +15,7 @@ h1 {
   margin: 0 auto;
   padding: 0 20px;
   font-family: 'Neuton', serif;
+  display: inline-block;
 }
 
 h1:hover {
