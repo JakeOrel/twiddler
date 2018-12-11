@@ -40,6 +40,12 @@ button:hover {
   cursor: pointer;
 }
 
+#newTweet {
+  max-width: 500px;
+  margin: 10px auto;
+  padding: 5px;
+}
+
 .tweets {
   padding: 10px;
 }

@@ -33,6 +33,23 @@
           displayHomepage();
         });
 
+        var $newTweet = $('<form id="newTweet"></form>');
+        var $visitorName = $('<div><label for="visitorName">Username</label>\n<input type="text" id="visitorName"></div>');
+        var $visitorTweet = $('<div><label for="visitorTweet">Tweet</label>\n<input type="text" id="visitorTweet"></div>');
+        var $visitorButton = $('<div><input type="submit"></div>');
+        
+        $newTweet.append($visitorName, $visitorTweet, $visitorButton);
+        $newTweet.appendTo($main);
+
+        $('#newTweet').submit(function(event) {
+          event.preventDefault();
+          window.visitor = $('#visitorName').val();
+          writeTweet($('#visitorTweet').val());
+          $('#visitorName').val('');
+          $('#visitorTweet').val('');
+          displayHomepage();
+        });
+
         var $tweets = $('<div class="tweets"></div>');
         $tweets.appendTo($main);
 
