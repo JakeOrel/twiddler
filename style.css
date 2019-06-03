@@ -72,3 +72,9 @@ button:hover {
 .timestamp {
   font-size: 14px;
 }
+
+#github {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+}
